@@ -10,9 +10,15 @@ function App() {
 
   const { password, generatePassword, error} = useGeneratePassword();
   const [checkbox, setCheckbox] = useState(options);
+  const [copy , setCopy] = useState(false);
   const [length, setLength] = useState(4);
-  const generatePass = ()=>{
-     generatePassword(length,checkbox);
+
+  const handleCopy = ()=>{
+    navigator.clipboard.writeText(password);
+    setCopy(true);
+    setInterval(() => {
+      setCopy(false);
+    }, 1000);
   }
   return (
     <div className="container">
@@ -20,8 +26,8 @@ function App() {
       <div>
         {password}
       </div>
-      <button className="button">
-        COPY
+      <button className="button" onClick={handleCopy}>
+        {copy?"COPIED":"COPY"}
       </button>
      </div>}
       <Slider length={length} setLength={setLength}/>
@@ -36,7 +42,7 @@ function App() {
         <div>poor</div>
       </div>
 
-      <button onClick={generatePass} className="generateButton">GENERATE PASSWORD</button>
+      <button onClick={()=>generatePassword(length,checkbox)} className="generateButton">GENERATE PASSWORD</button>
     </div>
   )
 }
