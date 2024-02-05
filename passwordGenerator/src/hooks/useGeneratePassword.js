@@ -7,7 +7,7 @@ const useGeneratePassword = () => {
   const generatePassword = (length, checkbox) => {
     let generatedPassword = "",
       charset = "";
-    if (length === 0) {
+    if (length == 0) {
       setError("length must be greater than zero");
       return;
     }

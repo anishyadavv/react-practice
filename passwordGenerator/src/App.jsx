@@ -37,11 +37,6 @@ function App() {
           })}
       </div>
        {error && <div className="error">{error}</div>}
-      <div className="strength">
-        <div>Strength:</div>
-        <div>poor</div>
-      </div>
-
       <button onClick={()=>generatePassword(length,checkbox)} className="generateButton">GENERATE PASSWORD</button>
     </div>
   )
