@@ -1,8 +1,5 @@
-import { useState } from "react"
-
 
 const Slider = ({length,setLength}) => {
-    
   return (
     <div className="slider">
       <div className="character">
