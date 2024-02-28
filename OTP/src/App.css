@@ -1,0 +1,13 @@
+*{
+  font-family: sans-serif;
+}
+.container{
+  text-align: center;
+}
+.otp{
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+  font-size: 1.3rem;
+  text-align: center;
+}
