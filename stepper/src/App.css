@@ -1,0 +1,50 @@
+.stepper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.step{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-no{
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  padding: 10px;
+  background-color: rgb(187, 186, 186);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.active{
+  background-color: rgb(78, 78, 247);
+}
+.completed{
+  background-color: rgb(43, 165, 43);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progress-bar{
+  margin-top:13px;
+  position: absolute;
+  width: 93%;
+  height: 10px;
+  background-color: rgb(187, 186, 186);
+  margin-left: 12px;
+  overflow: hidden;
+}
+.progress{
+  background-color: rgb(43, 165, 43);
+  height: 10px;
+}
