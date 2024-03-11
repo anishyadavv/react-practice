@@ -1,0 +1,16 @@
+.cell{
+  border: 1px solid black;
+  padding: 5px;
+  cursor:cell;
+  width: 100px;
+  height: 20px;
+}
+
+.cells{
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+}
+.selected{
+  border: 1px solid blue;
+}
