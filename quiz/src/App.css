@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
+.correct{
+  color: green;
+}
+.wrong{
+  color: red;
+}
+.question{
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.options{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.option{
+  background-color: rgb(207, 207, 207);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
