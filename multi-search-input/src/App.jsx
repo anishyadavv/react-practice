@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Pill from './components/Pill';
 function App() {
@@ -10,13 +10,31 @@ function App() {
   const inputRef = useRef(null);
 
 
+  useEffect(()=>{
+
+    if(searchedUser.trim()===""){
+      setSuggestions([]);
+      return;
+    }
+
+      const fetchUser = ()=>{
+        fetch(`https://dummyjson.com/users/search?q=${searchedUser}`)
+      .then(res=>res.json())
+      .then(data=>setSuggestions(data.users))
+      .catch(err=>console.error(err));
+    }
+
+    const timer = setTimeout(()=>{
+      fetchUser();
+    },500);
+
+    return ()=>clearTimeout(timer);
+
+  },[searchedUser])
+
   const handleSearch = (e)=>{
     setSearchedUser(e.target.value);
 
-      fetch(`https://dummyjson.com/users/search?q=${searchedUser}`)
-    .then(res=>res.json())
-    .then(data=>setSuggestions(data.users))
-    .catch(err=>console.error(err));
   }
   const handleSelectedUser = (user)=>{
     setSelectedUsers([...selectedUsers,user]);
